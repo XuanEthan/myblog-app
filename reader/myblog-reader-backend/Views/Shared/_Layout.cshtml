@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - myblog_reader_backend</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass" style="color: #696969"></i>
+        </div>
+        <div class="navigation">
+            <a class="nav-item" asp-controller="Home">Home</a>
+            <a class="nav-item" href="#">About</a>
+                <a class="nav-item" asp-action="Index" asp-controller="Posts" asp-route-PostCategory="Travel">Travel</a>
+                <a class="nav-item" asp-action="Index" asp-controller="Posts" asp-route-PostCategory="Food">Food</a>
+            </div>
+        <div class="platforms">
+            <i class="fa-brands fa-facebook-f" style="color: #696969"></i>
+            <i class="fa-brands fa-instagram" style="color: #696969"></i>
+            <i class="fa-brands fa-twitter" style="color: #696969"></i>
+        </div>
+    </header>
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+
+    <footer >
+        <div class="footer-content">
+            <div class="about-me">
+                <img src="~/image/90cf860d8e3548fdb4808f676ee3e05d.jpg"
+                     alt="About Me" />
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>
+                        I'm a paragraph. Click here to add your own text and edit me.
+                        It’s easy. Just click “Edit Text” or double click me to add your
+                        own content and make changes to the font.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="join-list">
+                <h3>Join My Mailing list</h3>
+                <form>
+                    <label for="email">Email *</label>
+                    <input type="email"
+                           id="email"
+                           placeholder="Enter your email here"
+                           required />
+                    <div class="checkbox">
+                        <input type="checkbox" id="subscribe" />
+                        <label for="subscribe">Yes, subscribe me to your newsletter.</label>
+                    </div>
+                    <button type="submit">Subscribe Now</button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                © 2035 by Going Places. Powered and secured by <a href="#">Huy</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
+
+<style>
+    html {
+        font-size: 16px;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    :root {
+        --color-white: white;
+        --color-whitesmoke: #f2f2f2;
+        --color-dimgray: #696969;
+        --color-royalblue: #2573da;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    header {
+        background-color: var(--color-whitesmoke);
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem 2rem;
+    }
+
+        header div {
+            font-size: 13px;
+        }
+
+        header .navigation {
+            display: flex;
+            column-gap: 3rem;
+        }
+
+            header .navigation .nav-item {
+                text-decoration: none;
+                color: var(--color-dimgray);
+            }
+
+                header .navigation .nav-item:hover {
+                    color: steelblue;
+                }
+
+        header i {
+            font-size: 1.25rem;
+            padding: 0 0.5rem;
+        }
+
+    /* footer */
+    footer {
+        background-color: var(--color-dimgray);
+        color: #fff;
+        font-family: serif;
+        padding: 1rem 0;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+        /* About Me section */
+        .footer-content .about-me {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            max-width: 500px;
+        }
+
+            .footer-content .about-me img {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+        .footer-content .about-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-family: serif;
+        }
+
+        .footer-content .about-text p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+
+        .footer-content .about-text a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+    /* Mailing list */
+    .join-list h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-family: serif;
+    }
+
+    .join-list form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .join-list label {
+        font-size: 0.95rem;
+    }
+
+    .join-list input[type="email"] {
+        padding: 0.6rem;
+        width: 250px;
+        border: 1px solid #ccc;
+        background: transparent;
+        color: #fff;
+    }
+
+    .join-list input[type="checkbox"] {
+        margin-right: 0.5rem;
+    }
+
+    .join-list .checkbox {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #ddd;
+    }
+
+    .join-list button {
+        background-color: #2573da;
+        color: #fff;
+        border: none;
+        padding: 0.7rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: fit-content;
+    }
+
+        .join-list button:hover {
+            background-color: #1a5eb5;
+        }
+
+    /* Social icons */
+    .social-icons {
+        margin-top: 1.5rem;
+    }
+
+        .social-icons i {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+            .social-icons i:hover {
+                color: #2573da;
+            }
+
+    /* Footer bottom */
+    .footer-bottom {
+        padding-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+
+</style>

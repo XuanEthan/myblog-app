@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="about-my-blog">
+    <p>My Blog</p>
+    <p class="hightlight">Going Places</p>
+    <p>I haven't been everywhere, but it's on my list</p>
+</section>
+<section class="about-pages">
+    <p class="title">Let's discover my blog</p>
+    <div class="cards">
+        <div class="cards-item travel-thumbnail">
+            <a href="">Travel</a>
+        </div>
+        <div class="cards-item food-thumbnail">
+            <a href="">Food</a>
+        </div>
+    </div>
+</section>
+
+<section class="about-brands">
+    <p style="font-family: serif">As featured in</p>
+    <p>|</p>
+    <p>
+        <span style="font-weight: 900">travel</span>
+        <span style="text-align: end">blog</span>
+    </p>
+    <p>
+        <span>
+            <i class="fa-solid fa-plane fa-rotate-by"
+               style="color: #000000; --fa-rotate-angle: 230deg"></i>
+        </span>PLANE<span style="display: initial; font-weight: 700">TOUR</span>
+    </p>
+    <p style="font-weight: 900"><span>WORLD</span>TRAVEL</p>
+    <p style="font-weight: 700">
+        <span><i class="fa-solid fa-cloud" style="color: #000000"></i></span>skycloud
+    </p>
+</section>
+<section class="posts"></section>
+<section class="platforms">
+    <p>
+        <i class="fa-brands fa-facebook-f" style="color: white"></i>Facebook
+    </p>
+    <p>
+        <i class="fa-brands fa-instagram" style="color: white"></i>Instagram
+    </p>
+    <p>
+        <i class="fa-brands fa-twitter" style="color: white"></i>Twitter
+    </p>
+</section>
+<section class="gallery">
+    <div class="image">
+        <img src="~/image/5bfb6f_c667d0c9bd634b1aa2b29311795f3c51.jpg"
+             alt="" />
+    </div>
+    <div class="image">
+        <img src="~/image/5bfb6f_9f2519d5fc2d41f990a10dd92eb8658d.jpg"
+             alt="" />
+    </div>
+    <div class="image">
+        <img src="~/image/5bfb6f_ea37f67cad544b348df9f3d0ff40f282.jpg"
+             alt="" />
+    </div>
+    <div class="image">
+        <img src="~/image/77b421686d6088e6527cf57d68c69e96.jpg" alt="" />
+    </div>
+</section>
+<style>
+    /* section 1  */
+    section.about-my-blog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 3px;
+        background: url('/image/5bfb6f_26f1a5c736e544e09c63c82a4c792645~mv2_d_3839_1306_s_2 (1).jpg') top center / cover no-repeat scroll;
+        background-position: top center;
+        color: var(--color-white);
+        font-size: 1.25rem;
+        padding: 12rem 0;
+    }
+
+        section.about-my-blog .hightlight {
+            font-size: 4rem;
+            font-weight: 700;
+        }
+
+    /* section 2 */
+    section.about-pages {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+        section.about-pages > p {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        section.about-pages .cards {
+            display: flex;
+            justify-content: center;
+            column-gap: 18px;
+            width: 100%;
+            height: auto;
+        }
+
+        section.about-pages .cards-item {
+            width: 300px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            section.about-pages .cards-item.travel-thumbnail {
+                background: url('/image/5bfb6f_9f2519d5fc2d41f990a10dd92eb8658d.jpg') center / cover no-repeat scroll;
+            }
+
+            section.about-pages .cards-item.food-thumbnail {
+                background: url('/image/5bfb6f_c667d0c9bd634b1aa2b29311795f3c51.jpg') center / cover no-repeat scroll;
+            }
+
+            section.about-pages .cards-item a {
+                padding: 12px 36px;
+                background-color: var(--color-white);
+                font-family: serif;
+                font-size: 1.25rem;
+                color: var(--color-royalblue);
+            }
+
+    /* section 3 */
+    section.about-brands {
+        display: flex;
+        background-color: var(--color-whitesmoke);
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 4rem 0;
+        font-size: 1.35rem;
+    }
+
+        section.about-brands span {
+            display: block;
+            text-align: center;
+        }
+    /* section 4 */
+    section.platforms {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--color-royalblue);
+        padding: 2rem 0;
+    }
+
+        section.platforms p {
+            color: white;
+        }
+
+    /* section 5*/
+
+    section.gallery {
+        display: grid;
+        width: 100%;
+        height: 300px;
+        grid-template-columns: auto auto auto auto;
+    }
+
+        section.gallery .image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+            section.gallery .image img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+</style>

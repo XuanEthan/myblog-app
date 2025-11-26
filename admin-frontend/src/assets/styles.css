@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+
+  font-weight: 400;
+}
+
+:root {
+  --container-bg-color: #f1f1f1;
+  --navbar-bg-color: #1e1e1e;
+  --bar-hover-clicked: #3858e9;
+  --text-color-normal: white;
+  --a-color-normal: #3858e9;
+  --button-border-color: #3858e9;
+  --button-text-color: #3858e9;
+  --button-add-save-bg-color: #3858e9;
+  --table-border-bg-color: #cacaca;
+  --font-size-normal: 13px;
+  --table-th-font-size: 14px;
+
+  --navbar-bg-color-primary: #1e1e1e;
+  --bg-color: #f1f1f1;
+  --font-size-primary: 14px;
+  --font-size-secondary: 13px;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--container-bg-color);
+}
+
+.navbar {
+  background-color: var(--navbar-bg-color);
+}
+
+.navbar li {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style-type: none;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 16px;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+a,
+input[type='submit'] {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.router-link-active.router-link-exact-active {
+  background-color: var(--bar-hover-clicked);
+}
+
+i.error-msg {
+  color: red;
+  font-size: 13px;
+  display: block;
+  margin-top: 2px;
+}
+
+.header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input,
+.tiptap.ProseMirror.ProseMirror-focused {
+  outline: none;
+}
+
+p.item-count {
+  text-align: end;
+  margin: 0px 0px 6px 0px;
+  font-size: var(--font-size-normal);
+  color: black;
+}
+
+.btn {
+  font-size: 13px;
+}
