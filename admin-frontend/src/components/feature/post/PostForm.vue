@@ -50,6 +50,13 @@ watch(
 
 const imagePreview = ref()
 
+onMounted(() => {
+    if (props.post?.imagePath) {
+        const fileInput = document.getElementById('imageFile')
+        
+    }
+})
+
 function onFileChange(event) {
     const file = event.target.files[0];
     postLocal.imageFile = file;
