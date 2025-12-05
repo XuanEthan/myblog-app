@@ -113,8 +113,12 @@ namespace MyBlogAdminService.Controllers
                 var imagePath = await SaveImageAsync(dto.ImageFile);
                 post.ImagePath = imagePath;
             }
+            else if (!string.IsNullOrEmpty(post.ImagePath))
+            {
+                post.ImagePath = default;
+            }
 
-            var foundCategories = await getCategoriesByIds(dto.CategoryIds);
+                var foundCategories = await getCategoriesByIds(dto.CategoryIds);
             var foundTags = await getTagsByIds(dto.TagIds);
 
             if (foundCategories.Count != (dto.CategoryIds?.Count ?? 0) ||
